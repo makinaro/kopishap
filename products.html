@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product blank</title>
+    <link rel="stylesheet" href="css\style_nav.css">
+    <link rel="stylesheet" href="css\global.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="css\products.css">
+</head>
+<body>
+    <section id="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section id="products">
+        <div class="container">
+            
+            <h1>----- Drinks -----</h1>
+            <div class="product">
+                <div class="product-image">
+                    <img src="img\products\spanish_latte.png" alt="spanish latte">
+                </div>
+                <div class="product-info">
+                    <h1>Spanish Latte</h1>
+                    <p>₱180.00</p>
+                    <p>A rich and creamy latte with a hint of sweetness. Our Spanish Latte is made with perfectly steamed milk, a double shot of espresso, and a touch of condensed milk for a unique twist on a classic latte. It's the perfect pick-me-up any time of day.</p>
+                    <button id="add-spanish-latte">Add to cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="img\products\caramel_macchiato.jpg" alt="caramel macchiato">
+                </div>
+                <div class="product-info">
+                    <h1>Caramel Macchiato</h1>
+                    <p>₱185.00</p>
+                    <p>Indulge in the sweet delight of our Caramel Macchiato. Expertly crafted with a rich shot of espresso, velvety steamed milk, and a decadent drizzle of caramel. Its perfect balance of sweetness and bold coffee flavor is sure to satisfy your cravings.</p>
+                    <button id="add-caramel-macchiato">Add to cart</button>
+                </div>
+            </div>
+            <h1>----- Pastries -----</h1>
+            <div class="product">
+                <div class="product-image">
+                    <img src="img\products\cookie_bundle.jpg" alt="cookie bundle">
+                </div>
+                <div class="product-info">
+                    <h1>Cookie Bundle</h1>
+                    <p>₱150.00</p>
+                    <p>Our cookie bundle includes 3 of our best-selling cookies: chocolate chip, double chocolate, and white chocolate macadamia.</p>
+                    <button id="add-cookies">Add to cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="img\products\croissant.jpg" alt="croissant">
+                </div>
+                <div class="product-info">
+                    <h1>Croissant</h1>
+                    <p>₱165.00</p>
+                    <p>Experience the delight of our freshly baked Croissant. Made with high-quality butter and baked to perfection, our croissant offers a flaky exterior and a soft, buttery interior. It's the perfect companion to your morning coffee or as a snack any time of the day.</p>
+                    <button id="add-croissant">Add to cart</button>
+                </div>
+            </div>
+            <div id="popup" style="display: none;">
+                <p id="popup-message"></p>
+                <button onclick="hidePopup()">OK</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-checkout">
+            <h1>Checkout</h1>
+            <div class="breakdown">
+                <table id="cart">
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="checkout-form">
+                <form>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="address">Address:</label><br>
+                    <input type="text" id="address" name="address"><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="js\checkout.js"></script>
+</body>
+</html>
