@@ -44,6 +44,29 @@ $("#add-croissant").click(function () {
     updateCart();
     showPopup("Added Croissant to cart!");
 });
+
+$("#submit-btn").click(function () {
+    let total = 0;
+    for (let i = 0; i < products.length; i++) {
+        total += products[i].price * products[i].quantity;
+    }
+    if (total > 0){
+        if ($("#name").val() == "" && $("#email").val() == "" && $("#address").val() == "") {
+            showPopup("Please fill out checkout details!");
+            return;
+        }
+        showPopup("Order submitted!");
+        $("#name").val("");
+        $("#email").val("");
+        $("#address").val("");
+        for (let i = 0; i < products.length; i++) {
+            products[i].quantity = 0;
+        }
+        updateCart();
+    } else {
+        showPopup("Please add items to cart!");
+    }
+});
 function showPopup(message) {
     document.getElementById('popup-message').textContent = message;
     document.getElementById('popup').style.display = 'block';
@@ -70,22 +93,24 @@ function updateCart() {
             subtotalCell.innerHTML = "₱"+products[i].price * products[i].quantity+".00";
         }
     }
-    let blankrow = cart.insertRow();
-    let blank1 = blankrow.insertCell(0);
-    let blank2 = blankrow.insertCell(1);
-    let blank3 = blankrow.insertCell(2);
-    let line = blankrow.insertCell(3);
-
-    let rowTotal = cart.insertRow();
-    let blank4 = rowTotal.insertCell(0);
-    let blank5 = rowTotal.insertCell(1);
-    let blank6 = rowTotal.insertCell(2);
-    let totalCell = rowTotal.insertCell(3);
     let total = 0;
     for (let i = 0; i < products.length; i++) {
         total += products[i].price * products[i].quantity;
+        }
+    if (total > 0) {
+        let blankrow = cart.insertRow();
+        for (let i = 0; i < 4; i++) {
+            blankrow.insertCell(i);
+        }
+        let line = blankrow.insertCell(3);
+        let rowTotal = cart.insertRow();
+        for (let i = 0; i < 4; i++) {
+            rowTotal.insertCell(i);
+        }
+        let totalCell = rowTotal.insertCell(3);
+        line.innerHTML = "__________";
+        totalCell.innerHTML = "₱" + total+".00";
+        totalCell.style.fontWeight = "bold";
     }
-    line.innerHTML = "__________";
-    totalCell.innerHTML = "₱" + total+".00";
-    totalCell.style.fontWeight = "bold";
+    
 }

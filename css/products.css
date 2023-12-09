@@ -54,6 +54,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     /* font-weight: bold; */
+    display:flex;
     padding: 3px;
     border: none;
     border-radius: 5px;
@@ -70,6 +71,7 @@
     background-color: #ffe96c;
     color: #000;
 }
+
 #popup {
     position: fixed;
     left: 50%;

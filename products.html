@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="css\global.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="css\products.css">
+    <link rel="icon" href="img\logo\kofi-logo.svg">
 </head>
 <body>
     <section id="navbar">
+        <div>
+            <a href="index.html"><img src="img\logo\kofi-logo.svg" alt="logo"></a>
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#cart">Cart</a></li>
+                <li><a href="index.html" title="Home"><img src="img\icons\home.svg" alt="home"></a></li>
+                <li><a href="products.html"><img src="img\icons\products.svg" alt="products"></a></li>
+                <li><a href="products.html#cart"><img src="img\icons\cart.svg" alt="cart"></a></li>
             </ul>
         </nav>
     </section>
@@ -95,7 +99,8 @@
                     <input type="email" id="email" name="email"><br>
                     <label for="address">Address:</label><br>
                     <input type="text" id="address" name="address"><br>
-                    <input type="submit" value="Submit">
+                    <a href="#cart"><input type="button" value="Submit" id="submit-btn"></a>
+                    
                 </form>
             </div>
         </div>
